@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package tunnel;
+
+message Req {
+    enum Type { ZERO = 0; TYPE = 1; }
+    int32 from = 1;
+    string host = 2;
+    string port = 3;
+}
+
+message Resp {
+    enum Type { ZERO = 0; TYPE = 2; }
+    int32 to = 1;
+    int32 from = 2;
+    uint32 host = 3;
+    uint32 port = 4;
+}
+
+message Data {
+    enum Type { ZERO = 0; TYPE = 3; }
+    int32 to = 1;
+    bytes data = 2;
+}
